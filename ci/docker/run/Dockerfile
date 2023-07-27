@@ -12,6 +12,7 @@ RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive \
     && apt-get install --no-install-recommends -y \
                         autoconf \
+                        automake \
                         bc \
                         bison \
                         build-essential \
@@ -43,7 +44,7 @@ WORKDIR /tmp
 RUN git clone "${REPO}" verilator && \
     cd verilator && \
     git checkout "${SOURCE_COMMIT}" && \
-    autoconf && \
+    autoreconf -iv && \
     ./configure && \
     make && \
     make install && \

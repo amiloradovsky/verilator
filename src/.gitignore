@@ -1,6 +1,6 @@
 *~
 *.old
-config_package.h
+config_package.h*
 Makefile
 Makefile_obj
 .objcache*

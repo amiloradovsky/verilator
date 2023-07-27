@@ -45,7 +45,7 @@ if [ "$CI_BUILD_STAGE_NAME" = "build" ]; then
   # Build verilator
 
   if [ "$COVERAGE" != 1 ]; then
-    autoconf
+    autoreconf --install --verbose
     ./configure --enable-longtests --enable-ccwarn ${CI_M32:+--enable-m32}
     ccache -z
     "$MAKE" -j "$NPROC" -k

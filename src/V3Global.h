@@ -19,9 +19,6 @@
 
 // clang-format off
 #include "config_build.h"
-#ifndef HAVE_CONFIG_PACKAGE
-# error "Something failed during ./configure as config_package.h is incomplete. Perhaps you used autoreconf, don't."
-#endif
 // clang-format on
 
 #include "verilatedos.h"

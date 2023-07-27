@@ -32,7 +32,7 @@ jobs:
           git config --global user.name "github action"
       - name: Format code
         run: |
-          autoconf &&
+          autoreconf -iv &&
           ./configure &&
           make -j 2 format CLANGFORMAT=clang-format-14 &&
           git status

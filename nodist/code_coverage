@@ -37,7 +37,7 @@ def test():
     if Args.stage_enabled[1]:
         ci_fold_start("configure")
         print("Stage 1: configure (coverage on)")
-        run("autoconf")
+        run("autoreconf --install --verbose")
         run("./configure --enable-longtests --enable-coverage CXX=g++")
         ci_fold_end()
 

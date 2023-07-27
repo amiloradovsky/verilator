@@ -17,7 +17,7 @@ SRCS=$PWD/verilator
 git clone "$REPO" "$SRCS"
 cd "$SRCS"
 git checkout "$REV"
-autoconf
+autoreconf --install --verbose
 ./configure --enable-longtests
 make -j $(nproc)
 if [ "${1:-''}" == "test" ]; then

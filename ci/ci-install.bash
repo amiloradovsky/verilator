@@ -85,7 +85,7 @@ if [ "$CI_BUILD_STAGE_NAME" = "build" ]; then
     brew update
     brew install ccache perl gperftools
   elif [ "$CI_OS_NAME" = "freebsd" ]; then
-    sudo pkg install -y autoconf bison ccache gmake perl5
+    sudo pkg install -y autoconf automake bison ccache gmake perl5
   else
     fatal "Unknown os: '$CI_OS_NAME'"
   fi

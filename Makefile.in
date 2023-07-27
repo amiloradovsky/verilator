@@ -449,10 +449,6 @@ install-msg:
 
 IN_WILD := ${srcdir}/*.in ${srcdir}/*/*.in
 
-# autoheader might not change config_package.h.in, so touch it
-${srcdir}/config_package.h: ${srcdir}/config_package.h.in configure
-	cd ${srcdir} && autoheader
-	touch $@
 Makefile: Makefile.in config.status $(IN_WILD)
 	./config.status
 src/Makefile: src/Makefile.in Makefile
@@ -461,14 +457,14 @@ config.status: configure
 
 configure: configure.ac
 ifeq ($(CFG_WITH_CCWARN),yes)  # Local... Else don't burden users
-	autoconf --warnings=all
+	autoreconf --install --verbose --warnings=all
 else
-	autoconf
+	autoreconf --install --verbose
 endif
 
 maintainer-clean::
 	@echo "This command is intended for maintainers to use;"
-	@echo "rebuilding the deleted files requires autoconf."
+	@echo "rebuilding the deleted files requires Autoconf & Automake."
 	rm -f configure
 
 clean mostlyclean distclean maintainer-clean maintainer-copy::

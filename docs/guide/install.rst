@@ -39,7 +39,7 @@ In brief, to install from git:
 ::
 
    # Prerequisites:
-   #sudo apt-get install git help2man perl python3 make autoconf g++ flex bison ccache
+   #sudo apt-get install git help2man perl python3 make autoconf automake g++ flex bison ccache
    #sudo apt-get install libgoogle-perftools-dev numactl perl-doc
    #sudo apt-get install libfl2  # Ubuntu only (ignore if gives error)
    #sudo apt-get install libfl-dev  # Ubuntu only (ignore if gives error)
@@ -57,9 +57,10 @@ In brief, to install from git:
    #git checkout stable      # Use most recent stable release
    #git checkout v{version}  # Switch to specified release version
 
-   autoconf         # Create ./configure script
+   autoreconf -iv   # Create ./configure script
    ./configure      # Configure and create Makefile
    make -j `nproc`  # Build Verilator itself (if error, try just 'make')
+   make test        # run the self-tests (optional)
    sudo make install
 
 
@@ -119,7 +120,7 @@ need to be present to run Verilator:
 
 ::
 
-   sudo apt-get install git autoconf flex bison
+   sudo apt-get install git autoconf automake flex bison
 
 Those developing Verilator itself may also want these (see internals.rst):
 
@@ -183,7 +184,7 @@ Create the configuration script:
 
 ::
 
-   autoconf        # Create ./configure script
+   autoreconf -iv  # Create ./configure script
 
 
 Eventual Installation Options

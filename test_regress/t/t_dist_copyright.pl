@@ -35,6 +35,7 @@ our @Exempt_Files_List = qw(
     include/gtkwave
     include/vltstd
     install-sh
+    src/config_package.h
     src/mkinstalldirs
     test_regress/t/t_altera_lpm.v
     test_regress/t/t_flag_f__3.v

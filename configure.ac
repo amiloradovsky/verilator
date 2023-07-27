@@ -1,4 +1,4 @@
-# DESCRIPTION: Process this file with autoconf to produce a configure script.
+# DESCRIPTION: Process this file with Autoconf to produce a configure script.
 #
 # Copyright 2003-2023 by Wilson Snyder. Verilator is free software; you
 # can redistribute it and/or modify it under the terms of either the GNU Lesser
@@ -398,7 +398,6 @@ AC_LINK_IFELSE(
         [_my_result=no])])
 AC_MSG_RESULT($_my_result)
 CXXFLAGS="$ACO_SAVE_CXXFLAGS"
-AC_SUBST(HAVE_COROUTINES)
 
 # Flags for compiling Verilator internals including parser always
 _MY_CXX_CHECK_OPT(CFG_CXXFLAGS_SRC,-Qunused-arguments)
@@ -580,7 +579,6 @@ AC_LINK_IFELSE(
     [_my_result=no])
 AC_MSG_RESULT($_my_result)
 LIBS="$ACO_SAVE_LIBS"
-AC_SUBST(HAVE_SYSTEMC)
 
 # Checks for system services
 

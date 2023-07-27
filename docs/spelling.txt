@@ -414,6 +414,8 @@ async
 ato
 atoi
 autoconf
+automake
+autoreconf
 autoflush
 bXXXX
 backend

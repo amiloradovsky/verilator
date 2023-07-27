@@ -15,7 +15,7 @@ set -e
 
 # Build instrumented version of verilator
 pushd ../..
-autoconf
+autoreconf -iv
 AFL_HARDEN=1 CC=afl-gcc CXX=afl-g++ ./configure $(cd ..; pwd)
 make clean
 make -j $(ncpus)
